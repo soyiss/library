@@ -21,13 +21,15 @@ public class BookController {
     //saveForm 도서 등록 화면 출력
     @GetMapping("/save")
     public String saveForm(){
+
         return "save";
     }
 
     //save 도서 등록처리
     @PostMapping("/save")
     public String save(@ModelAttribute BookDTO bookDTO, Model model){
-        System.out.println("bookDTO = " + bookDTO);
+        System.out.println("bookDTO = " + bookDTO+
+                "\nBookController DTO필드 인풋값 받아옴 id는 db에 안가서 null인것처럼 id는 long타입이라  0출력");
         // bookService의 save메소드를 호출함,매개변수를 bookDTO를 넘겨줌
         // 받아온 메소드를 int형 변수인 saveResult에 넣어줌
         int saveResult = bookService.save(bookDTO);

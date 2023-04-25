@@ -15,7 +15,8 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
     public int save(BookDTO bookDTO){
-        System.out.println("bookDTO = " + bookDTO);
+        System.out.println("bookDTO = " + bookDTO +
+                "\nservice클래스 DTO필드 인풋값 받아옴 id는 db에 안가서 null인것처럼 id는 long타입이라  0출력");
 
         // bookRepository의save메소드를 호출한다 매개변수는 bookDTO를 보냄
         int result = bookRepository.save(bookDTO);
